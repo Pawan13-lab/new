@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Hello, Friend!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --primary-color: #4158D0;
+            --secondary-color: #C850C0;
+            --tertiary-color: #FFCC70;
+            --text-color: #333;
+            --light-color: #fff;
+            --shadow-color: rgba(0, 0, 0, 0.2);
+        }
+
+        body {
+            background: linear-gradient(-45deg, var(--primary-color), var(--secondary-color), var(--tertiary-color));
+            background-size: 400% 400%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 1000px;
+            overflow: hidden;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        .container {
+            position: relative;
+            width: 90%;
+            max-width: 700px;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform-style: preserve-3d;
+            z-index: 10;
+        }
+
+        .card {
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px var(--shadow-color);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            transform-style: preserve-3d;
+            transition: transform 0.5s ease;
+        }
+
+        .card-content {
+            text-align: center;
+            transform: translateZ(50px);
+        }
+
+        .greeting {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .greeting::before {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: gradientText 5s ease infinite;
+        }
+
+        .wave {
+            display: inline-block;
+            font-size: 5rem;
+            margin-right: 1rem;
+            animation: wave 1.5s infinite;
+            transform-origin: 70% 70%;
+        }
+
+        .message {
+            font-size: 1.4rem;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 2rem auto;
+            opacity: 0.9;
+            transform: translateZ(75px);
+            max-width: 80%;
+        }
+
+        .cta-container {
+            margin-top: 2rem;
+            transform: translateZ(100px);
+        }
+
+        .button {
+            padding: 0.8rem 2.5rem;
+            font-size: 1.2rem;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: var(--light-color);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            box-shadow: 0 6px 20px rgba(192, 132, 252, 0.4);
+            transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(192, 132, 252, 0.6);
+        }
+
+        .button:active {
+            transform: translateY(-1px) scale(1.02);
+        }
+
+        .button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.7s;
+        }
+
+        .button:hover::before {
+            left: 100%;
+        }
+
+        .scene,
+        .cube-container,
+        .heart-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .cube-container {
+            z-index: -1;
+        }
+
+        .cube {
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            transform-style: preserve-3d;
+            animation: cubeSpin 20s linear infinite;
+        }
+
+        .cube-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .face-front { transform: translateZ(30px); }
+        .face-back { transform: rotateY(180deg) translateZ(30px); }
+        .face-right { transform: rotateY(90deg) translateZ(30px); }
+        .face-left { transform: rotateY(-90deg) translateZ(30px); }
+        .face-top { transform: rotateX(90deg) translateZ(30px); }
+        .face-bottom { transform: rotateX(-90deg) translateZ(30px); }
+
+        .heart {
+            position: absolute;
+            color: rgba(255, 105, 180, 0.8);
+            font-size: 1.5rem;
+            animation: floatHeart 4s linear forwards;
+        }
+
+        .notification {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--text-color);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px var(--shadow-color);
+            font-size: 1.1rem;
+            font-weight: 500;
+            opacity: 0;
+            z-index: 999;
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        .notification.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(10px);
+        }
+
+        @keyframes gradientBG {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes gradientText {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes wave {
+            0%, 60%, 100% { transform: rotate(0deg); }
+            10% { transform: rotate(14deg); }
+            20% { transform: rotate(-8deg); }
+            30% { transform: rotate(14deg); }
+            40% { transform: rotate(-4deg); }
+            50% { transform: rotate(10deg); }
+        }
+
+        @keyframes cubeSpin {
+            0% { transform: rotateX(0) rotateY(0) rotateZ(0); }
+            100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
+        }
+
+        @keyframes floatHeart {
+            0% { transform: translateY(0) translateX(0) scale(1) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 0.8; }
+            100% {
+                transform: translateY(-600px) translateX(var(--tx)) scale(0) rotate(var(--tr));
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container { height: auto; }
+            .card { padding: 1.5rem; }
+            .greeting { font-size: 2.5rem; }
+            .wave { font-size: 3.5rem; }
+            .message { font-size: 1.1rem; max-width: 95%; }
+            .button { padding: 0.7rem 2rem; font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="notification" id="notification">Friendship vibes sent! ✨</div>
+    <div class="container">
+        <div class="card">
+            <div class="card-content">
+                <h1 class="greeting" data-text=""><span class="wave">👋</span>Hello, Friend!</h1>
+                <p class="message">Just wanted to reach out and say hello! Want to send some positive vibes your way.</p>
+                <div class="cta-container">
+                    <button class="button" id="helloBtn">Send Some Joy!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scene"></div>
+    <div class="cube-container" id="cubeContainer"></div>
+    <div class="heart-container" id="heartContainer"></div>
+
+    <script>
+        const heartContainer = document.getElementById('heartContainer');
+        const notification = document.getElementById('notification');
+        const button = document.getElementById('helloBtn');
+        const cubeContainer = document.getElementById('cubeContainer');
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '❤️';
+            const x = Math.random() * window.innerWidth;
+            const tx = (Math.random() - 0.5) * 200;
+            const tr = (Math.random() * 360) + 'deg';
+            heart.style.left = `${x}px`;
+            heart.style.setProperty('--tx', tx + 'px');
+            heart.style.setProperty('--tr', tr);
+            heartContainer.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 4000);
+        }
+
+        function showNotification() {
+            notification.classList.add('show');
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+
+        function createCube() {
+            const cube = document.createElement('div');
+            cube.className = 'cube';
+            cube.style.top = Math.random() * 100 + '%';
+            cube.style.left = Math.random() * 100 + '%';
+
+            ['front', 'back', 'right', 'left', 'top', 'bottom'].forEach(face => {
+                const faceDiv = document.createElement('div');
+                faceDiv.className = `cube-face face-${face}`;
+                cube.appendChild(faceDiv);
+            });
+
+            cubeContainer.appendChild(cube);
+        }
+
+        for (let i = 0; i < 3; i++) {
+            createCube();
+        }
+
+        button.addEventListener('click', () => {
+            showNotification();
+            for (let i = 0; i < 15; i++) {
+                setTimeout(createHeart, i * 100);
+            }
+        });
+    </script>
+</body>
+</html>
