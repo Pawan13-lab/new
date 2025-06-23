@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Active Listening Presentation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="presentation-container">
+        <div class="slide-counter">
+            <span id="currentSlide">1</span> / <span id="totalSlides">6</span>
+        </div>
+
+        <!-- Slide 1: Title -->
+     <div class="slide active" style="padding: 3rem; text-align: center; background: linear-gradient(to right, #0f172a, #1e293b); color: #e2e8f0; font-family: 'Segoe UI', sans-serif;">
+    <h1 style="font-size: 3rem; margin-bottom: 0.5rem; color: #38bdf8;">Active Listening</h1>
+    <p class="subtitle" style="font-size: 1.4rem; color: #cbd5e1; margin-bottom: 3rem;">Unlock Deeper Connections</p>
+
+    <div class="visual-container" style="position: relative; width: 100%; max-width: 500px; margin: 0 auto; height: 250px;">
+        <div class="silhouette" style="width: 120px; height: 120px; background: #475569; border-radius: 50%; position: absolute; left: 0; top: 50%; transform: translateY(-50%); box-shadow: inset 0 0 20px #0ea5e9;"></div>
+        
+        <div class="speech-waves" id="waveGroup" style="position: absolute; left: 130px; top: 50%; transform: translateY(-50%); display: flex; gap: 8px; cursor: pointer;">
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+        </div>
+
+        <div class="ear-icon" style="width: 60px; height: 60px; background: radial-gradient(circle, #38bdf8 30%, transparent 70%); border-radius: 50%; position: absolute; right: 0; top: 50%; transform: translateY(-50%); box-shadow: 0 0 20px #38bdf8;"></div>
+    </div>
+</div>
+
+
+        <!-- Slide 2: Definition & Impact -->
+        <div class="slide" style="padding: 2rem; font-family: 'Segoe UI', sans-serif; background-color: #0f172a; color: #e2e8f0;">
+            <h2 style="text-align: center; font-size: 2rem; margin-bottom: 2rem;">Definition & Impact of Active Listening</h2>
+        
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h3 style="color: #a5b4fc; font-size: 1.5rem; margin-bottom: 0.5rem;">What Is Active Listening?</h3>
+                <p style="font-size: 1.1rem; color: #cbd5e1;">Active listening means giving full attention to the speaker by focusing, understanding, and responding thoughtfully.</p>
+            </div>
+        
+            <h3 style="color: #7dd3fc; text-align: center; font-size: 1.4rem; margin-bottom: 1.5rem;">Why It Matters</h3>
+        
+            <div class="impact-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                <div class="impact-item" style="background-color: #1e293b; padding: 1rem; border-radius: 0.5rem;">
+                    <strong style="display: block; font-size: 1.1rem; color: #38bdf8;">Builds Trust & Respect</strong>
+                    <p style="margin-top: 0.5rem; color: #94a3b8;">Lays the foundation for authentic, meaningful relationships.</p>
+                </div>
+                <div class="impact-item" style="background-color: #1e293b; padding: 1rem; border-radius: 0.5rem;">
+                    <strong style="display: block; font-size: 1.1rem; color: #22d3ee;">Prevents Miscommunication</strong>
+                    <p style="margin-top: 0.5rem; color: #94a3b8;">Minimizes misunderstandings and reduces costly errors.</p>
+                </div>
+                <div class="impact-item" style="background-color: #1e293b; padding: 1rem; border-radius: 0.5rem;">
+                    <strong style="display: block; font-size: 1.1rem; color: #5eead4;">Fosters Empathy & Collaboration</strong>
+                    <p style="margin-top: 0.5rem; color: #94a3b8;">Enhances team synergy and emotional intelligence.</p>
+                </div>
+                <div class="impact-item" style="background-color: #1e293b; padding: 1rem; border-radius: 0.5rem;">
+                    <strong style="display: block; font-size: 1.1rem; color: #67e8f9;">Drives Better Outcomes</strong>
+                    <p style="margin-top: 0.5rem; color: #94a3b8;">Leads to informed decisions and improved performance.</p>
+                </div>
+            </div>
+        </div>
+        
+    </tr>
+
+    <!--3rd slide-->>
+    <div class="slide">
+        <style>
+          .slide {
+            padding: 30px;
+            background: linear-gradient(135deg, #1e293b, #334155);
+            color: #f1f5f9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border-radius: 16px;
+            margin: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+          }
+      
+          .slide h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: #fbbf24;
+          }
+      
+          .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 12px;
+          }
+      
+          .benefit-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 16px;
+            transition: transform 0.3s ease, background 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+          }
+      
+          .benefit-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(1.03);
+          }
+      
+          .benefit-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #facc15;
+            margin-bottom: 10px;
+          }
+      
+          .benefit-description {
+            font-size: 16px;
+            color: #e2e8f0;
+          }
+        </style>
+      
+        <h2>Benefits of Active Listening</h2>
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-title">Enhances Understanding</div>
+            <div class="benefit-description">Improves clarity and comprehension of the message.</div>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-title">Builds Trust</div>
+            <div class="benefit-description">Fosters stronger relationships by making the speaker feel valued.</div>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-title">Encourages Openness</div>
+            <div class="benefit-description">Creates a safe space for sharing thoughts and feelings.</div>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-title">Reduces Conflicts</div>
+            <div class="benefit-description">Minimizes misunderstandings and promotes conflict resolution.</div>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-title">Increases Retention</div>
+            <div class="benefit-description">Helps retain information better through engagement.</div>
+          </div>
+        </div>
+      </div>
+      
+
+               
+
+        <!-- Slide 4: Common Barriers -->
+        
+    
+
+        <!-- Slide 5: Advanced Techniques -->
+        <div class="slide" style="
+        padding: 3rem 2rem;
+        background: linear-gradient(to bottom right, #0f172a, #1e293b);
+        color: #e2e8f0;
+        font-family: 'Segoe UI', sans-serif;
+    ">
+        <style>
+            .barrier-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 1.5rem;
+            }
+    
+            .barrier-card {
+                background: rgba(255, 255, 255, 0.05);
+                padding: .5rem 1.5rem;
+                border-radius: 12px;
+                box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+                transition: background 0.3s ease, transform 0.3s ease;
+            }
+    
+            .barrier-card:hover {
+                background: rgba(56, 189, 248, 0.1);
+                transform: translateY(-5px);
+            }
+    
+            .barrier-card h3 {
+                color: #38bdf8;
+                margin-bottom: 0.5rem;
+                font-size: 1.2rem;
+            }
+    
+            .barrier-card p {
+                font-size: 1rem;
+                color: #e2e8f0;
+                line-height: 1.5;
+            }
+    
+            @media (max-width: 600px) {
+                .barrier-card {
+                    padding: 2rem;
+                }
+            }
+        </style>
+    
+        <h1 style="font-size: 2.5rem; text-align: center; margin-bottom: 1rem; color: #38bdf8;">
+            Common Barriers to Active Listening
+        </h1>
+        
+    
+        <div class="barrier-grid">
+            <div class="barrier-card">
+                <h3>1. Distractions</h3>
+                <p>Environmental noise or interruptions can break concentration.</p>
+            </div>
+            <div class="barrier-card">
+                <h3>2. Prejudgment</h3>
+                <p>Forming opinions before fully listening can lead to misunderstandings.</p>
+            </div>
+            <div class="barrier-card">
+                <h3>3. Emotional Barriers</h3>
+                <p>Personal feelings or biases can obstruct empathy and understanding.</p>
+            </div>
+            <div class="barrier-card">
+                <h3>4. Assumptions</h3>
+                <p>Assuming you know what the speaker will say can prevent genuine engagement.</p>
+            </div>
+            <div class="barrier-card">
+                <h3>5. Fatigue</h3>
+                <p>Physical or mental tiredness can diminish focus and retention.</p>
+            </div>
+            <div class="barrier-card">
+                <h3>6. Lack of Interest</h3>
+                <p>Disinterest in the topic can hinder attention and engagement.</p>
+            </div>
+            <div class="barrier-card">
+                <h3>7. Defensiveness</h3>
+                <p>Feeling attacked or criticized can cause listeners to shut down.</p>
+            </div>
+            <div class="barrier-card">
+                <h3>8. Information Overload</h3>
+                <p>Being overwhelmed by details can make it hard to process what’s being said.</p>
+            </div>
+        </div>
+    </div>
+    
+        <!-- Slide 6: Takeaways & Action -->
+        <div class="slide" style="
+        padding: 3rem 2rem;
+        background: linear-gradient(to right, #0f172a, #1e293b);
+        color: #e2e8f0;
+        font-family: 'Segoe UI', sans-serif;
+    ">
+        <style>
+            .tips-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 1.5rem;
+            }
+    
+            .tip-card {
+                background: rgba(255, 255, 255, 0.05);
+                padding: 1rem 1.5rem;
+                border-radius: 12px;
+                box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+                transition: background 0.3s ease, transform 0.3s ease;
+            }
+    
+            .tip-card:hover {
+                background: rgba(34, 211, 238, 0.1);
+                transform: translateY(-5px);
+            }
+    
+            .tip-card h3 {
+                color: #38bdf8;
+                margin-bottom: 0.5rem;
+                font-size: 1.2rem;
+            }
+    
+            .tip-card p {
+                font-size: 1rem;
+                color: #e2e8f0;
+                line-height: 1.5;
+            }
+    
+            @media (max-width: 600px) {
+                .tip-card {
+                    padding: 1rem;
+                }
+            }
+        </style>
+    
+        <h1 style="font-size: 2.5rem; text-align: center; margin-bottom: 1rem; color: #38bdf8;">
+            Strategies for the Active Listining
+        </h1>
+        <p style="text-align: center; font-size: 0.8rem; color: #94a3b8; margin-bottom: 2rem;font-family:'MedievalSharp', cursive ;">
+            Apply these techniques to build trust and foster meaningful dialogue
+        </p>
+    
+        <div class="tips-grid">
+            <div class="tip-card">
+                <h3>1. Maintain Eye Contact</h3>
+                <p>Show attentiveness by looking at the speaker, which helps build a connection.</p>
+            </div>
+            <div class="tip-card">
+                <h3>2. Use Open Body Language</h3>
+                <p>Keep your posture open and inviting. Avoid crossing arms or turning away.</p>
+            </div>
+            <div class="tip-card">
+                <h3>3. Provide Verbal Affirmations</h3>
+                <p>Use small verbal cues like “I see” or “Go on” to encourage the speaker.</p>
+            </div>
+            <div class="tip-card">
+                <h3>4. Paraphrase and Summarize</h3>
+                <p>Repeat back what the speaker has said in your own words to confirm understanding.</p>
+            </div>
+            <div class="tip-card">
+                <h3>5. Ask Open-Ended Questions</h3>
+                <p>Encourage deeper discussion with questions that can't be answered with just “yes” or “no.”</p>
+            </div>
+            <div class="tip-card">
+                <h3>6. Allow Space to Speak</h3>
+                <p>Let the speaker express themselves fully without interrupting or rushing them.</p>
+            </div>
+        </div>
+    </div>
+    
+
+        <!-- Slide 7: Thank You -->
+        <div class="slide" style="
+        padding: 3rem 2rem;
+        background: linear-gradient(to right, #0f172a, #1e293b);
+        color: #e2e8f0;
+        font-family: 'Segoe UI', sans-serif;
+    ">
+        <style>
+            .techniques-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 1.5rem;
+            }
+    
+            .technique-card {
+                background: rgba(255, 255, 255, 0.05);
+                padding: 1.2rem 1.5rem;
+                border-radius: 12px;
+                box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+                transition: background 0.3s ease, transform 0.3s ease;
+            }
+    
+            .technique-card:hover {
+                background: rgba(34, 211, 238, 0.1);
+                transform: translateY(-5px);
+            }
+    
+            .technique-card h3 {
+                color: #38bdf8;
+                margin-bottom: 0.5rem;
+                font-size: 1.2rem;
+            }
+    
+            .technique-card p {
+                font-size: 1rem;
+                color: #e2e8f0;
+                line-height: 1.5;
+            }
+    
+            @media (max-width: 600px) {
+                .technique-card {
+                    padding: 1rem;
+                }
+            }
+        </style>
+    
+        <h1 style="font-size: 2.5rem; text-align: center; margin-bottom: 1rem; color: #38bdf8;">
+            Additional Strategies 
+        </h1>
+      
+    
+        <div class="techniques-grid">
+            <div class="technique-card">
+                <h3>7. Avoid Interrupting</h3>
+                <p>Let the speaker finish their thoughts before responding. This shows respect for their message.</p>
+            </div>
+            <div class="technique-card">
+                <h3>8. Reflect Emotions</h3>
+                <p>Acknowledge the speaker's feelings with phrases like, “It sounds like you’re feeling…”</p>
+            </div>
+            <div class="technique-card">
+                <h3>9. Limit Distractions</h3>
+                <p>Find a quiet environment and put away devices to focus entirely on the conversation.</p>
+            </div>
+            <div class="technique-card">
+                <h3>10. Practice Empathy</h3>
+                <p>Try to understand the speaker’s perspective and emotions to foster a deeper connection.</p>
+            </div>
+            <div class="technique-card">
+                <h3>11. Be Patient</h3>
+                <p>Allow the speaker time to express themselves without rushing or finishing their sentences.</p>
+            </div>
+        </div>
+    </div>
+
+    <!--8th slide-->
+    <div class="slide">
+        <style>
+            .final-heading {
+      font-size: 36px;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.1);
+   
+    }
+
+    .animated-text {
+      display: flex;
+      gap: 8px;
+    }
+
+    .animated-text span {
+      display: inline-block;
+      font-size: 0;
+      font-weight: 900;
+      color: #ffffff;
+      animation: showup 6s ease-in-out infinite;
+    }
+
+    .animated-text span:nth-child(1) { animation-delay: 0.2s; text-shadow: 2px 2px 6px #ff4d4d; }
+    .animated-text span:nth-child(2) { animation-delay: 0.4s; text-shadow: 2px 2px 6px #ff7043; }
+    .animated-text span:nth-child(3) { animation-delay: 0.6s; text-shadow: 2px 2px 6px #ff8c00; }
+    .animated-text span:nth-child(4) { animation-delay: 0.8s; text-shadow: 2px 2px 6px #ffab40; }
+    .animated-text span:nth-child(5) { animation-delay: 1.0s; text-shadow: 2px 2px 6px #ffd700; }
+    .animated-text span:nth-child(6) { animation-delay: 1.2s; text-shadow: 2px 2px 6px #32cd32; }
+    .animated-text span:nth-child(7) { animation-delay: 1.4s; text-shadow: 2px 2px 6px #00ced1; }
+    .animated-text span:nth-child(8) { animation-delay: 1.6s; text-shadow: 2px 2px 6px #1e90ff; }
+    .animated-text span:nth-child(9) { animation-delay: 1.8s; text-shadow: 2px 2px 6px #6a5acd; }
+
+    @keyframes showup {
+      0%   { font-size: 0; transform: rotate(90deg) scale(0.5); opacity: 0; }
+      10%  { font-size: 72px; transform: rotate(0deg) scale(1); opacity: 1; }
+      15%  { font-size: 72px; transform: scale(1.1); opacity: 1; }
+      60%  { font-size: 68px; transform: scale(1); opacity: 1; }
+      80%  { opacity: 0.7; }
+      100% { font-size: 0; transform: scale(0.8); opacity: 0; }
+    }
+  </style>
+    <div class="final-heading">Thank you for listening</div>
+    <div class="animated-text">
+      <span>L</span>
+      <span>I</span>
+      <span>S</span>
+      <span>T</span>
+      <span>E</span>
+      <span>N</span>
+      <span>I</span>
+      <span>N</span>
+      <span>G</span>
+    </div>
+    </div>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">← Previous</button>
+            <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Next →</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        document.getElementById('totalSlides').textContent = totalSlides;
+
+        function updateSlideCounter() {
+            document.getElementById('currentSlide').textContent = currentSlideIndex + 1;
+        }
+
+        function updateNavButtons() {
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            
+            prevBtn.disabled = currentSlideIndex === 0;
+            nextBtn.disabled = currentSlideIndex === totalSlides - 1;
+        }
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active', 'prev');
+                if (i === index) {
+                    slide.classList.add('active');
+                } else if (i < index) {
+                    slide.classList.add('prev');
+                }
+            });
+            
+            updateSlideCounter();
+            updateNavButtons();
+        }
+       
+    const waveGroup = document.getElementById('waveGroup');
+    let isAnimating = true;
+
+    waveGroup.addEventListener('click', () => {
+        const waves = waveGroup.querySelectorAll('.wave');
+        isAnimating = !isAnimating;
+        waves.forEach(wave => {
+            wave.style.animationPlayState = isAnimating ? 'running' : 'paused';
+        });
+    });
+
+
+        function changeSlide(direction) {
+            const newIndex = currentSlideIndex + direction;
+            
+            if (newIndex >= 0 && newIndex < totalSlides) {
+                currentSlideIndex = newIndex;
+                showSlide(currentSlideIndex);
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                changeSlide(1);
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                changeSlide(-1);
+            }
+        });
+
+        // Touch/swipe support for mobile
+        let startX = 0;
+        let startY = 0;
+
+        document.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
+        });
+
+        document.addEventListener('touchend', (e) => {
+            if (!startX || !startY) return;
+            
+            const endX = e.changedTouches[0].clientX;
+            const endY = e.changedTouches[0].clientY;
+            
+            const diffX = startX - endX;
+            const diffY = startY - endY;
+            
+            // Only trigger if horizontal swipe is more significant than vertical
+            if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
+                if (diffX > 0) {
+                    changeSlide(1); // Swipe left - next slide
+                } else {
+                    changeSlide(-1); // Swipe right - previous slide
+                }
+            }
+            
+            startX = 0;
+            startY = 0;
+        });
+
+        // Initialize
+        updateNavButtons();
+    </script>
+</body>
+</html>
